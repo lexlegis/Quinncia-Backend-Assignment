@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <!-- <script src="https://cdn.socket.io/socket.io-2.2.0.js"></script> -->
+    <script>
+      var socket = io();
+      socket.on('new photo', function(photo){
+        console.log('New photo: ' + JSON.stringify(photo));
+      });
+      socket.on('deleted photo', function(publicId){
+        console.log('Deleted photo: ' + publicId);
+      });
+      socket.on('new comment', function(comment){
+        console.log('New comment: ' + JSON.stringify(comment));
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
